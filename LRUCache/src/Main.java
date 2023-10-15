@@ -2,48 +2,28 @@ import LRUChach.LRUChachData;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Main {
     private static final int maxSize = 2;//Chachのサイズ。この値を超えるとアクセスが古いデータから消えていく
-    static List<LRUChachData> LRUChachs = new ArrayList<>();
-    public static void main(String[] args) {
-        Main lru = new Main();
-        LRUChachData LRUChachData;
+    static List<LRUChachData> LRUChachs = new ArrayList<>();//LRUChachを格納するリスト
 
-        lru.put("a","dataA");
-        System.out.println("lru.put(" + lru.get("a").key+"),(" +  lru.get("a").value + ")");
-
-        lru.put("b","dataB");
-        System.out.println("lru.put(" + lru.get("b").key+"),(" +  lru.get("b").value + ")");
-
-        LRUChachData = lru.get("a");
-        System.out.println("lru.get(" + LRUChachData.key+"),(" +  LRUChachData.value + ")");
-
-        lru.put("c","dataC");
-        System.out.println("lru.get(" + lru.get("c").key+"),(" +  lru.get("c").value+ ")");
-
-        LRUChachData = lru.get("b");
-        System.out.println("lru.get(" + LRUChachData.key+"),(" +  LRUChachData.value+ ")");
-    }
-
-    ///summary
-    ///keyとvalueをLRUChachDataの型に変換してListのLRUChachsに追加する
-    ///summary
+    /**
+    *keyとvalueをLRUChachDataの型に変換してListのLRUChachsに追加する
+    */
     public void put(String key, String value)
     {
         Main _main = new Main();
         LRUChachData _LRUChachData;
         _LRUChachData = new LRUChachData(key,value);
-        LRUChachs.add(_LRUChachData);
+        LRUChachs.add(_LRUChachData);//リストにデータの追加
         if(_main.overMaxSize())
         {
-            deleteEldestData();
+            deleteEldestData();     //リストが最大数を超えた場合古いデータを削除
         }
     }
 
-    ///summary
-    ///getDataを行いデータを返すと共にsortListの両方行う
-    ///summary
+    /**
+     * getDataを行いデータを返すと共にsortListの両方行う
+     */
     public  LRUChachData get(String getKey)
     {
         Main _main = new Main();
@@ -51,9 +31,9 @@ public class Main {
         return _main.getData(getKey);
     }
 
-    ///summary
-    ///引数のkeyで指定したデータがLRUChachsの中にあればデータを返す
-    ///summary
+    /**
+    *引数のkeyで指定したデータがLRUChachsの中にあればデータを返す
+    */
     public  LRUChachData getData(String getKey)
     {
         final LRUChachData[] _LRUChachData = new LRUChachData[1];
@@ -68,25 +48,25 @@ public class Main {
         return _LRUChachData[0];
     }
 
-    ///summary
-    ///LRUChachsの要素数が最大数以上ならtrue値を返す
-    ///summary
+    /**
+    *LRUChachsの要素数が最大数以上ならtrue値を返す
+    */
     public  boolean overMaxSize()
     {
         return (long) LRUChachs.size() > maxSize;
     }
 
-    ///summary
-    ///一番古いデータを削除する
-    ///summary
+    /**
+    *一番古いデータを削除する
+    */
     public  void deleteEldestData()
     {
         LRUChachs.remove(0);
     }
 
-    ///summary
-    ///使用した場合に使用したデータを先頭に持ってくる
-    ///summary
+    /**
+    *使用した場合に使用したデータを先頭に持ってくる
+    */
     public  void sortList(String useDataKey)
     {
         Main _main = new Main();
