@@ -7,7 +7,7 @@ public class Main {
     static List<LRUChachData> LRUChachs = new ArrayList<>();//LRUChachを格納するリスト
 
     /**
-    *keyとvalueをLRUChachDataの型に変換してListのLRUChachsに追加する
+    *keyとvalueをLRUChachDataの型に変換してListのLRUChachsに追加する。
     */
     public void put(String key, String value)
     {
@@ -22,7 +22,7 @@ public class Main {
     }
 
     /**
-     * getDataを行いデータを返すと共にsortListの両方行う
+     * getDataを行いデータを返すと共にsortListの両方行う。
      */
     public  LRUChachData get(String getKey)
     {
@@ -32,7 +32,7 @@ public class Main {
     }
 
     /**
-    *引数のkeyで指定したデータがLRUChachsの中にあればデータを返す
+    *引数のkeyで指定したデータがLRUChachsの中にあればデータを返す。
     */
     public  LRUChachData getData(String getKey)
     {
@@ -49,7 +49,7 @@ public class Main {
     }
 
     /**
-    *LRUChachsの要素数が最大数以上ならtrue値を返す
+    *LRUChachsの要素数が最大数以上ならtrue値を返す。
     */
     public  boolean overMaxSize()
     {
@@ -57,7 +57,7 @@ public class Main {
     }
 
     /**
-    *一番古いデータを削除する
+    *一番古いデータを削除する。
     */
     public  void deleteEldestData()
     {
@@ -65,7 +65,7 @@ public class Main {
     }
 
     /**
-    *使用した場合に使用したデータを先頭に持ってくる
+    *使用した場合に使用したデータを先頭に持ってくる。
     */
     public  void sortList(String useDataKey)
     {

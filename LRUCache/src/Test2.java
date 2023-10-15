@@ -1,7 +1,7 @@
 import LRUChach.LRUChachData;
 
 /**
- * サイズが2の時の例2
+ * サイズが2の時の例2。
  */
 public class Test2 {
     public static void main(String[] args) {
