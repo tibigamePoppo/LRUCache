@@ -1,12 +1,11 @@
-import LRUChach.LRUChachData;
-
 /**
  * サイズが2の時の例1。
+ * 一つも使われてない場合は最初に追加したものから消える
  */
-public class Test1 {
+public class Example1 {
     public static void main(String[] args) {
-        Main lru = new Main();
-        LRUChachData LRUChachData;
+        LRUCache lru = new LRUCache();
+        LRUCacheData LRUChachData;
 
         lru.put("a","dataA");
         System.out.println("lru.put(" + lru.get("a").key+"),(" +  lru.get("a").value + ")");
